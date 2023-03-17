@@ -44,7 +44,6 @@ Next, import the packages in [requirements.txt](requirements.txt):
 pip install -r requirements.txt
 ```
 
-
 ## Prereqs
 
 To develop your applications locally, you will need
@@ -78,6 +77,7 @@ You should see the following output:
 You can run the test suite locally from the project root:
 
 ```
+pip install -r requirements-test.txt
 python -m pytest
 ```
 
@@ -97,7 +97,6 @@ create secrets in your GitHub repository with the same name and values as the en
 - [Snowpark Developer Guide for Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/index)
 - [Creating Stored Procedures](https://docs.snowflake.com/en/developer-guide/snowpark/python/creating-sprocs)
 - [Snowpark API Reference](https://docs.snowflake.com/developer-guide/snowpark/reference/python/index.html)
-
 
 ## Contributing
 
