@@ -1,6 +1,6 @@
 # Python Project Template for Snowpark
 
-Use this template to start writing data applications on Snowflake using Scala.
+Use this template to start writing data applications on Snowflake using Python.
 
 ## Setup
 
@@ -101,6 +101,6 @@ create secrets in your GitHub repository with the same name and values as the en
 
 ## Contributing
 
-Have a question or ran into a bug? Please [file an issue](https://github.com/Snowflake-Labs/snowpark-scala-template/issues/new) and let us know.
+Have a question or ran into a bug? Please [file an issue](https://github.com/Snowflake-Labs/snowpark-python-template/issues/new) and let us know.
 
 Have an idea for an improvement? Fork this repository and open a PR with your idea!
