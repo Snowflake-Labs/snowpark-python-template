@@ -1,0 +1,8 @@
+snowsql_config_path = ""
+snowsql_connection_name = ""
+
+[dev]
+database = ""
+schema = ""
+role = ""
+warehouse = ""

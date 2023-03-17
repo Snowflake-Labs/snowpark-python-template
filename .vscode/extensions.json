@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "donjayamanne.python-environment-manager",
+        "snowflake.snowflake-vsc",
+        "me-dutour-mathieu.vscode-github-actions"
+    ]
+}
