@@ -103,3 +103,4 @@ create secrets in your GitHub repository with the same name and values as the en
 Have a question or ran into a bug? Please [file an issue](https://github.com/Snowflake-Labs/snowpark-python-template/issues/new) and let us know.
 
 Have an idea for an improvement? Fork this repository and open a PR with your idea!
+
