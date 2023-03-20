@@ -31,7 +31,7 @@ using the System Properties menu (on Windows).
 
 ### Install dependencies
 
-Set up a virtual environment using [Anaconda](), [Miniconda](), or [virtualenv](). For example, the following command will create and activate a virtual environment named `venv`:
+Set up a virtual environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) or [virtualenv](https://docs.python.org/3/library/venv.html). For example, the following command will create and activate a virtual environment named `venv`:
 
 ```bash
 python3 -m venv venv
