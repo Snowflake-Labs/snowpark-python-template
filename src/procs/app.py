@@ -55,3 +55,5 @@ if __name__ == "__main__":
 
     print("Running stored proc...")
     run(session)
+
+    
