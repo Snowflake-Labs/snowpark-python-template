@@ -8,7 +8,7 @@ from snowflake.snowpark.dataframe import col, DataFrame
 from snowflake.snowpark.types import StringType
 
 
-def run(snowpark_session: Session) -> str:
+def run(snowpark_session: Session) -> int:
     """
     A sample stored procedure which creates a small DataFrame, prints it to the
     console, and returns the number of rows in the table.
