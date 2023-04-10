@@ -31,16 +31,19 @@ using the System Properties menu (on Windows).
 
 ### Install dependencies
 
-Set up a virtual environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) or [virtualenv](https://docs.python.org/3/library/venv.html). For example, the following command will create and activate a virtual environment named `venv`:
+Set up a virtual environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) or [virtualenv](https://docs.python.org/3/library/venv.html).
+
+#### Anaconda
+
+```bash
+conda env create -f environment.yml
+```
+
+#### Virtualenv
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-```
-
-Next, import the packages in [requirements.txt](requirements.txt):
-
-```bash
 pip install -r requirements.txt
 ```
 

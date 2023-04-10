@@ -23,17 +23,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Setup Conda
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: '3.8'
-          cache: 'pip'
+          activate-environment: conda-default
+          environment-file: environment.yml
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -r requirements-test.txt
+      # - name: Install dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install -r requirements.txt
+      #     pip install -r requirements-test.txt
+
+      - name: Install test dependencies
+        run: pup install -r requirements-test.txt
 
       - name: Run tests
         run: python -m pytest 

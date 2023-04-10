@@ -1,0 +1,13 @@
+# Snowpark environment file
+# https://docs.snowflake.com/en/developer-guide/snowpark/python/setup.html
+
+name: snowpark_default
+channels:
+  - snowflake
+dependencies:
+  - python=3.8
+  - snowflake-snowpark-python
+  - toml
+  - tomli
+  - pip:
+      - "git+https://github.com/Snowflake-Labs/snowflake-vcrpy.git@v0.1.1"
