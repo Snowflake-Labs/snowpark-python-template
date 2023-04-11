@@ -37,6 +37,7 @@ Set up a virtual environment using [Anaconda](https://conda.io/projects/conda/en
 
 ```bash
 conda env create -f environment.yml
+conda activate snowpark
 ```
 
 #### Virtualenv
