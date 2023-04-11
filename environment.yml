@@ -1,0 +1,14 @@
+# Snowpark environment file
+# https://docs.snowflake.com/en/developer-guide/snowpark/python/setup.html
+
+name: snowpark
+channels:
+  - snowflake
+dependencies:
+  - python=3.8
+  - pip
+  - snowflake-snowpark-python
+  - toml
+  - tomli
+  - pip:
+      - "-r requirements-test.txt"
