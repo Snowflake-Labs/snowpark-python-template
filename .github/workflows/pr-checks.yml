@@ -32,9 +32,6 @@ jobs:
           activate-environment: snowpark
           environment-file: environment.yml
 
-      - name: Install test dependencies
-        run: pip install -r requirements-test.txt
-
       - name: Run tests
         run: python -m pytest 
 
