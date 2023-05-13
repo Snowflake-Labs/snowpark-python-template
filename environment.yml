@@ -7,8 +7,6 @@ channels:
 dependencies:
   - python=3.8
   - pip
-  - snowflake-snowpark-python
-  - toml
-  - tomli
   - pip:
-      - "-r requirements-test.txt"
+      - "-r requirements.txt"
+      - "--editable ."

@@ -31,22 +31,22 @@ using the System Properties menu (on Windows).
 
 ### Install dependencies
 
-Set up a virtual environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) or [virtualenv](https://docs.python.org/3/library/venv.html).
-
-#### Anaconda
+Create and activate a conda environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands):
 
 ```bash
-conda env create -f environment.yml
+conda env create --file environment.yml
 conda activate snowpark
 ```
 
-#### Virtualenv
+### Configure IDE
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+#### VS Code
+
+Press `Ctrl`+`Shift`+`P` to open the command palette, then select **Python: Select Interpreter** and select the **snowpark** interpeter under the **Conda** list.
+
+#### PyCharm
+
+Go to **File** > **Settings** > **Project** > **Python Interpreter** and select the snowpark interpreter.
 
 ## Prereqs
 
@@ -60,9 +60,8 @@ To develop your applications locally, you will need
 
 Once you've set your credentials and installed the packages, you can test your connection to Snowflake by executing the stored procedure in [`app.py`](src/procs/app.py):
 
-```
-cd src
-python procs/app.py
+```bash
+python src/procs/app.py
 ```
 
 You should see the following output:
@@ -80,8 +79,7 @@ You should see the following output:
 
 You can run the test suite locally from the project root:
 
-```
-pip install -r requirements-test.txt
+```bash
 python -m pytest
 ```
 
