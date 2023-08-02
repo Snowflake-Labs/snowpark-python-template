@@ -5,8 +5,8 @@ and testing.
 
 from snowflake.snowpark.session import Session
 from snowflake.snowpark.dataframe import col, DataFrame
-from snowflake.snowpark.types import StringType
-
+from snowflake.snowpark.functions import udf
+from src.functions import combine
 
 def run(snowpark_session: Session) -> DataFrame:
     """
@@ -14,8 +14,7 @@ def run(snowpark_session: Session) -> DataFrame:
     console, and returns the number of rows in the table.
     """
 
-    # Register UDF
-    from src.udf.functions import combine
+    combine_udf = udf(combine)
 
     schema = ["col_1", "col_2"]
 
@@ -26,7 +25,7 @@ def run(snowpark_session: Session) -> DataFrame:
 
     df = snowpark_session.create_dataframe(data, schema)
 
-    df2 = df.select(combine(col("col_1"), col("col_2")).as_("hello_world")).sort(
+    df2 = df.select(combine_udf(col("col_1"), col("col_2")).as_("hello_world")).sort(
         "hello_world", ascending=False
     )
 
@@ -34,15 +33,16 @@ def run(snowpark_session: Session) -> DataFrame:
 
 
 if __name__ == "__main__":
-    # This entrypoint is used for local development.
+    # This entrypoint is used for local development (`$ python src/procs/app.py`)
 
     from src.util.local import get_env_var_config
 
     print("Creating session...")
     session = Session.builder.configs(get_env_var_config()).create()
+    session.add_import("src/functions.py", 'src.functions')
 
     print("Running stored procedure...")
-    result = run(session)
+    result = run(session) 
 
     print("Stored procedure complete:")
     result.show()
