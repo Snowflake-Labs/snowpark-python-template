@@ -8,12 +8,12 @@ Set the following environment variables with your Snowflake account information:
 
 ```bash
 # Linux/MacOS
-set SNOWSQL_ACCOUNT=<replace with your account identifer>
-set SNOWSQL_USER=<replace with your username>
-set SNOWSQL_PWD=<replace with your password>
-set SNOWSQL_DATABASE=<replace with your database>
-set SNOWSQL_SCHEMA=<replace with your schema>
-set SNOWSQL_WAREHOUSE=<replace with your warehouse>
+export SNOWSQL_ACCOUNT=<replace with your account identifer>
+export SNOWSQL_USER=<replace with your username>
+export SNOWSQL_PWD=<replace with your password>
+export SNOWSQL_DATABASE=<replace with your database>
+export SNOWSQL_SCHEMA=<replace with your schema>
+export SNOWSQL_WAREHOUSE=<replace with your warehouse>
 ```
 
 ```powershell
