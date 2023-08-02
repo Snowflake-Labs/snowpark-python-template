@@ -6,5 +6,5 @@ def combine(string_a: str, string_b: str) -> str:
     """
     A sample UDF implementation
     """
-    
+
     return string_a + string_b

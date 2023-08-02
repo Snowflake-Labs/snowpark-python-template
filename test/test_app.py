@@ -1,3 +1,7 @@
+"""
+Tests for the procedure module.
+"""
+
 from snowflake.snowpark.session import Session
 from src.app import run
 

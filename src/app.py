@@ -42,7 +42,7 @@ if __name__ == "__main__":
     session.add_import("src/functions.py", 'src.functions')
 
     print("Running stored procedure...")
-    result = run(session) 
+    result = run(session)
 
     print("Stored procedure complete:")
     result.show()
