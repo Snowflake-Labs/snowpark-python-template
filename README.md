@@ -42,7 +42,7 @@ conda activate snowpark
 
 #### VS Code
 
-Press `Ctrl`+`Shift`+`P` to open the command palette, then select **Python: Select Interpreter** and select the **snowpark** interpeter under the **Conda** list.
+Press `Ctrl`+`Shift`+`P` to open the command palette, then select **Python: Select Interpreter** and select the **snowpark** interpreter under the **Conda** list.
 
 #### PyCharm
 
@@ -53,7 +53,7 @@ Go to **File** > **Settings** > **Project** > **Python Interpreter** and select 
 To develop your applications locally, you will need
 
 - A Snowflake account
-- Python 3.8
+- Python 3.8 or greater
 - An IDE or code editor (VS Code, PyCharm, etc.)
 
 ## Usage

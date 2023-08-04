@@ -6,7 +6,7 @@ and testing.
 from snowflake.snowpark.session import Session
 from snowflake.snowpark.dataframe import col, DataFrame
 from snowflake.snowpark.functions import udf
-from src.functions import combine
+from src import functions
 
 def run(snowpark_session: Session) -> DataFrame:
     """
@@ -14,7 +14,7 @@ def run(snowpark_session: Session) -> DataFrame:
     console, and returns the number of rows in the table.
     """
 
-    combine_udf = udf(combine)
+    combine_udf = udf(functions.combine)
 
     schema = ["col_1", "col_2"]
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     print("Creating session...")
     session = Session.builder.configs(get_env_var_config()).create()
-    session.add_import("src/functions.py", 'src.functions')
+    session.add_import(functions.__file__, 'src.functions')
 
     print("Running stored procedure...")
     result = run(session)
