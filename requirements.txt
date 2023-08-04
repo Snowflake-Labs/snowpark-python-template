@@ -1,4 +1,4 @@
-snowflake-snowpark-python[pandas]==1.5.1
+snowflake-snowpark-python[pandas]
 tomli
 toml
 pytest
