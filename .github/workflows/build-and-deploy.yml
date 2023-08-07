@@ -24,11 +24,6 @@ jobs:
       run:
         shell: bash -el {0}
     steps:
-      - name: Install system packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libssl-dev 
-
       - uses: actions/checkout@v3
 
       - name: Setup Conda
@@ -36,6 +31,11 @@ jobs:
         with:
           activate-environment: snowpark
           environment-file: environment.yml
+
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libssl-dev 
 
       - name: Run tests
         run: python -m pytest 
