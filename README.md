@@ -61,7 +61,7 @@ To develop your applications locally, you will need
 Once you've set your credentials and installed the packages, you can test your connection to Snowflake by executing the stored procedure in [`app.py`](src/procs/app.py):
 
 ```bash
-python src/procs/app.py
+python src/app.py
 ```
 
 You should see the following output:
@@ -87,12 +87,6 @@ python -m pytest
 
 The GitHub Actions [workflow file](.github/workflows/build-and-deploy.yml) allows you to continously deploy your objects to Snowflake. When you're ready,
 create secrets in your GitHub repository with the same name and values as the environment variables you created earler (`SNOWSQL_PWD`, `SNOWSQL_ACCOUNT`, etc.). The workflow will create a stage, upload the Python source code, and create the stored procedure object. For more information, see [`resources.sql`](resources.sql).
-
-## Project Structure
-
-- [procs/](src/procs/): Directory for stored procedures
-- [udf/](src/udf/): Directory for your user-defined functions
-- [util/](src/util/): Directory for methods/classes shared between UDFs and procedures
 
 ## Docs
 
