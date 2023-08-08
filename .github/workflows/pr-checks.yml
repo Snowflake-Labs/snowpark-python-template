@@ -30,9 +30,6 @@ jobs:
           pip install cffi
           python -c "from ctypes.util import find_library; path = find_library('crypto'); from cffi import FFI; vffi = FFI(); vffi.cdef('const char *OpenSSL_version(int type);'); version_string = vffi.string(vffi.dlopen(path).OpenSSL_version(0)).decode('utf-8'); print(version_string)"
 
-      # - run: |  
-      #     python -c "from ctypes.util import find_library; path = find_library('crypto'); from cffi import FFI; vffi = FFI(); vffi.cdef('const char *SSLeay_version(int type);'); version_string = vffi.string(vffi.dlopen(path).SSLeay_version(0)).decode('utf-8'); print(version_string)"
-      
       - name: Setup Conda
         uses: conda-incubator/setup-miniconda@v2.2.0
         with:
@@ -46,9 +43,6 @@ jobs:
 
       - run: |
           python -c "from ctypes.util import find_library; path = find_library('crypto'); from cffi import FFI; vffi = FFI(); vffi.cdef('const char *OpenSSL_version(int type);'); version_string = vffi.string(vffi.dlopen(path).OpenSSL_version(0)).decode('utf-8'); print(version_string)"
-
-      - run: |  
-          python -c "from ctypes.util import find_library; path = find_library('crypto'); from cffi import FFI; vffi = FFI(); vffi.cdef('const char *SSLeay_version(int type);'); version_string = vffi.string(vffi.dlopen(path).SSLeay_version(0)).decode('utf-8'); print(version_string)"
 
       - name: Run tests
         run: python -m pytest 
