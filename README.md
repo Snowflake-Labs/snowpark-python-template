@@ -8,18 +8,20 @@ Set the following environment variables with your Snowflake account information:
 
 ```bash
 # Linux/MacOS
-set SNOWSQL_ACCOUNT=<replace with your account identifer>
-set SNOWSQL_USER=<replace with your username>
-set SNOWSQL_PWD=<replace with your password>
-set SNOWSQL_DATABASE=<replace with your database>
-set SNOWSQL_SCHEMA=<replace with your schema>
-set SNOWSQL_WAREHOUSE=<replace with your warehouse>
+export SNOWSQL_ACCOUNT=<replace with your account identifer>
+export SNOWSQL_USER=<replace with your username>
+export SNOWSQL_ROLE=<replace with your role>
+export SNOWSQL_PWD=<replace with your password>
+export SNOWSQL_DATABASE=<replace with your database>
+export SNOWSQL_SCHEMA=<replace with your schema>
+export SNOWSQL_WAREHOUSE=<replace with your warehouse>
 ```
 
 ```powershell
 # Windows/PowerShell
 $env:SNOWSQL_ACCOUNT = "<replace with your account identifer>"
 $env:SNOWSQL_USER = "<replace with your username>"
+$env:SNOWSQL_ROLE = "<replace with your role>"
 $env:SNOWSQL_PWD = "<replace with your password>"
 $env:SNOWSQL_DATABASE = "<replace with your database>"
 $env:SNOWSQL_SCHEMA = "<replace with your schema>"
@@ -31,38 +33,37 @@ using the System Properties menu (on Windows).
 
 ### Install dependencies
 
-Set up a virtual environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) or [virtualenv](https://docs.python.org/3/library/venv.html).
-
-#### Anaconda
+Create and activate a conda environment using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands):
 
 ```bash
-conda env create -f environment.yml
+conda env create --file environment.yml
 conda activate snowpark
 ```
 
-#### Virtualenv
+### Configure IDE
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+#### VS Code
+
+Press `Ctrl`+`Shift`+`P` to open the command palette, then select **Python: Select Interpreter** and select the **snowpark** interpreter under the **Conda** list.
+
+#### PyCharm
+
+Go to **File** > **Settings** > **Project** > **Python Interpreter** and select the snowpark interpreter.
 
 ## Prereqs
 
 To develop your applications locally, you will need
 
 - A Snowflake account
-- Python 3.8
+- Python 3.8 or greater
 - An IDE or code editor (VS Code, PyCharm, etc.)
 
 ## Usage
 
 Once you've set your credentials and installed the packages, you can test your connection to Snowflake by executing the stored procedure in [`app.py`](src/procs/app.py):
 
-```
-cd src
-python procs/app.py
+```bash
+python src/app.py
 ```
 
 You should see the following output:
@@ -80,8 +81,7 @@ You should see the following output:
 
 You can run the test suite locally from the project root:
 
-```
-pip install -r requirements-test.txt
+```bash
 python -m pytest
 ```
 
@@ -89,12 +89,6 @@ python -m pytest
 
 The GitHub Actions [workflow file](.github/workflows/build-and-deploy.yml) allows you to continously deploy your objects to Snowflake. When you're ready,
 create secrets in your GitHub repository with the same name and values as the environment variables you created earler (`SNOWSQL_PWD`, `SNOWSQL_ACCOUNT`, etc.). The workflow will create a stage, upload the Python source code, and create the stored procedure object. For more information, see [`resources.sql`](resources.sql).
-
-## Project Structure
-
-- [procs/](src/procs/): Directory for stored procedures
-- [udf/](src/udf/): Directory for your user-defined functions
-- [util/](src/util/): Directory for methods/classes shared between UDFs and procedures
 
 ## Docs
 

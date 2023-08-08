@@ -5,10 +5,9 @@ name: snowpark
 channels:
   - snowflake
 dependencies:
-  - python=3.8
+  - python=3.9
+  - openssl=3.0.9  # Addresses this issue with oscrypto: https://github.com/wbond/oscrypto/issues/75
   - pip
-  - snowflake-snowpark-python
-  - toml
-  - tomli
   - pip:
-      - "-r requirements-test.txt"
+      - "-r requirements.txt"
+      - "--editable ."

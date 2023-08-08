@@ -6,11 +6,11 @@ CREATE STAGE IF NOT EXISTS artifacts;
 PUT file://&artifact_name @artifacts AUTO_COMPRESS=FALSE OVERWRITE=TRUE;
 
 CREATE OR REPLACE PROCEDURE HELLO_WORLD_PROC()
-    RETURNS integer
+    RETURNS TABLE()
     LANGUAGE PYTHON
     RUNTIME_VERSION = 3.8
     IMPORTS = ('@artifacts/&artifact_name')
-    HANDLER = 'src.procs.app.run'
+    HANDLER = 'src.app.run'
     PACKAGES = ('pytest','snowflake-snowpark-python','tomli','toml');
 
 CREATE OR REPLACE FUNCTION COMBINE(a String, b String)
@@ -18,5 +18,5 @@ CREATE OR REPLACE FUNCTION COMBINE(a String, b String)
     LANGUAGE PYTHON
     RUNTIME_VERSION = 3.8
     IMPORTS = ('@artifacts/&artifact_name')
-    HANDLER = 'src.udf.functions.combine'
+    HANDLER = 'src.functions.combine'
     PACKAGES = ('pytest','snowflake-snowpark-python','tomli','toml');
