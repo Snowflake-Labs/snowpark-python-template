@@ -31,11 +31,6 @@ jobs:
         with:
           activate-environment: snowpark
           environment-file: environment.yml
-      
-      - name: Install system packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libssl-dev 
 
       - name: Run tests
         run: python -m pytest 
