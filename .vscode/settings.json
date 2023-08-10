@@ -1,0 +1,23 @@
+{
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/src",
+      },
+      "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/src",
+      },
+      "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${env:PYTHONPATH};${workspaceFolder}/src",
+      },
+      /* Env files are practical for storing settings.
+      For example to connect to the database or setting the PYTHONPATH
+      
+      */
+      "python.envFile": "${workspaceFolder}/.env",
+      "files.exclude": {
+        "**/.git": true,
+        "Lib": true,
+        "Include": true,
+        "Scripts": true,
+        "**/__pycache__":true
+    }   
+}

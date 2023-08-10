@@ -2,7 +2,7 @@
 Tests for the functions module.
 """
 
-from src.functions import combine
+from functions import combine
 
 def test_combine():
     expected = "hello world"
