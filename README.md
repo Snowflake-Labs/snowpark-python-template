@@ -58,6 +58,8 @@ To develop your applications locally, you will need
 - Python 3.8 or greater
 - An IDE or code editor (VS Code, PyCharm, etc.)
 
+> NOTE: `PYTHONPATH` is an environment variable in Python that specifies a list of directories where Python should look for modules and packages when importing them. It is crucial when your source code is organized below the "src" folder, as setting `PYTHONPATH` to include the parent directory of "src" ensures that Python can locate and import your modules correctly, facilitating seamless collaboration and efficient module management within your project.
+
 ## Usage
 
 Once you've set your credentials and installed the packages, you can test your connection to Snowflake by executing the stored procedure in [`app.py`](src/procs/app.py):

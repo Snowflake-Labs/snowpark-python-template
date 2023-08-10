@@ -6,7 +6,7 @@ and testing.
 from snowflake.snowpark.session import Session
 from snowflake.snowpark.dataframe import col, DataFrame
 from snowflake.snowpark.functions import udf
-from src import functions
+import functions
 
 def run(snowpark_session: Session) -> DataFrame:
     """
@@ -35,11 +35,11 @@ def run(snowpark_session: Session) -> DataFrame:
 if __name__ == "__main__":
     # This entrypoint is used for local development (`$ python src/procs/app.py`)
 
-    from src.util.local import get_env_var_config
+    from util.local import get_env_var_config
 
     print("Creating session...")
     session = Session.builder.configs(get_env_var_config()).create()
-    session.add_import(functions.__file__, 'src.functions')
+    session.add_import(functions.__file__, 'functions')
 
     print("Running stored procedure...")
     result = run(session)
