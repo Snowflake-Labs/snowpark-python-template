@@ -15,7 +15,7 @@ schema = ""
 role = ""
 warehouse = ""
 
-[pytest]
+[tool.pytest.ini_options]
 markers = snowflake_vcr: marks Snowflake-specific vcrpy tests
 
 [tool.pylint]
