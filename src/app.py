@@ -32,9 +32,7 @@ def run(snowpark_session: Session) -> DataFrame:
     return df2
 
 
-if __name__ == "__main__":
-    # This entrypoint is used for local development (`$ python src/procs/app.py`)
-
+def main():
     from src.util.local import get_env_var_config
 
     print("Creating session...")
@@ -46,3 +44,7 @@ if __name__ == "__main__":
 
     print("Stored procedure complete:")
     result.show()
+
+
+if __name__ == "__main__":
+    main()
