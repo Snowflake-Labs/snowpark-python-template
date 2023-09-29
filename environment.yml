@@ -1,7 +1,7 @@
 # Snowpark environment file
 # https://docs.snowflake.com/en/developer-guide/snowpark/python/setup.html
 
-name: snowpark
+name: snowpark2
 channels:
   - snowflake
 dependencies:

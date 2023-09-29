@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[snow.default]
+snowsql_config_path = ""
+snowsql_connection_name = ""
+
+[snow.dev]
+database = ""
+schema = ""
+role = ""
+warehouse = ""
+
+[pytest]
+markers = snowflake_vcr: marks Snowflake-specific vcrpy tests
+
+[tool.pylint]
+ignore-patterns=test_
+good-names=df
+ignore=
+    __init__.py
+disable=
+    import-error,
+    import-outside-toplevel
